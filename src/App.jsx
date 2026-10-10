@@ -1,27 +1,57 @@
-import { BrowserRouter } from 'react-router-dom'
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from './components'
+import { useEffect, useState } from "react";
+import Lenis from "lenis";
+import {
+  About,
+  Certificates,
+  Contact,
+  Cursor,
+  Experience,
+  Feedbacks,
+  Hero,
+  Navbar,
+  Preloader,
+  Tech,
+  Works,
+} from "./components";
+import { setLenis } from "./utils/scroll";
 
 const App = () => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const lenis = new Lenis({ duration: 1.15, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    setLenis(lenis);
+    let raf;
+    const loop = (time) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+      setLenis(null);
+    };
+  }, []);
 
   return (
-    <BrowserRouter>
-      <div className='relative z-0  bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center '>
-          <Navbar />
-          <Hero />
-        </div>
+    <>
+      <Preloader onDone={() => setReady(true)} />
+      <Cursor />
+      <Navbar />
+      <main>
+        <Hero ready={ready} />
         <About />
+        <Works />
         <Experience />
         <Tech />
-        <Works />
-        <Feedbacks/> 
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas /> 
-        </div>
-      </div>
-    </BrowserRouter>
-  )
-}
+        <Feedbacks />
+        <Certificates />
+        <Contact />
+      </main>
+    </>
+  );
+};
 
-export default App
+export default App;

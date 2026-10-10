@@ -21,19 +21,21 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
 import solutionsloft from "./company/solutionsloft.png";
 import ntdc from "./company/ntdc_logo.png";
-import tesla from "./company/tesla.png";
+import intelliscence from "./company/intelliscence.svg";
 
-import carrent from "./carrent.png";
+import brandpulse from "./brandpulse.png";
 import eventzero from "./eventzero.png";
-import jobit from "./jobit.png";
+import polypo from "./polypo.png";
 import edily from "./edily.png";
-import tripguide from "./tripguide.png";
 import metavivor from "./metavivor.png";
+import smartfaktura from "./smartfaktura.png";
+import tubetycoon from "./tubetycoon.png";
+import restaurant from "./restaurant.png";
+import tapatcare from "./tapatcare.png";
+import mail from "./mail.png";
+import profitpilot from "./profitpilot.png";
 
 export {
   logo,
@@ -57,16 +59,18 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
   solutionsloft,
   ntdc,
-  tesla,
-  carrent,
+  intelliscence,
+  brandpulse,
   eventzero,
-  jobit,
+  polypo,
   edily,
-  tripguide,
   metavivor,
+  smartfaktura,
+  tubetycoon,
+  restaurant,
+  tapatcare,
+  mail,
+  profitpilot,
 };

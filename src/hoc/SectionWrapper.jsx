@@ -1,26 +1,15 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { styles } from '../styles'
-import { staggerContainer } from '../utils/motion'
+import { styles } from "../styles";
 
+const SectionWrapper = (Component, idName, className = "") =>
+  function HOC(props) {
+    return (
+      <section
+        id={idName || undefined}
+        className={`${styles.container} py-20 sm:py-32 relative scroll-mt-16 ${className}`}
+      >
+        <Component {...props} />
+      </section>
+    );
+  };
 
-const SectionWrapper = (Component, idName) =>
-    function HOC() {
-        return (
-            <motion.section
-            variants={staggerContainer()}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{once:true, amount: 0.25}}
-            className={`${styles.padding} max-w-7xl 
-            mx-auto relative  z-0`}
-            >
-                <span className='hash-span' id={idName}>
-                    &nbsp;
-                </span>
-                <Component />
-            </motion.section>
-        )
-    }
-
-export default SectionWrapper
+export default SectionWrapper;
