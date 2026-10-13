@@ -24,6 +24,7 @@ import threejs from "./tech/threejs.svg";
 import solutionsloft from "./company/solutionsloft.png";
 import ntdc from "./company/ntdc_logo.png";
 import intelliscence from "./company/intelliscence.svg";
+import transistor from "./company/transistor.svg";
 
 import brandpulse from "./brandpulse.png";
 import eventzero from "./eventzero.png";
@@ -62,6 +63,7 @@ export {
   solutionsloft,
   ntdc,
   intelliscence,
+  transistor,
   brandpulse,
   eventzero,
   polypo,

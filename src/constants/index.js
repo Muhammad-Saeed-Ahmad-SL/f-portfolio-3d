@@ -2,6 +2,7 @@ import {
   solutionsloft,
   ntdc,
   intelliscence,
+  transistor,
   brandpulse,
   eventzero,
   polypo,
@@ -49,7 +50,7 @@ const services = [
 const stats = [
   { value: "4+", label: "Years shipping" },
   { value: "11", label: "Products live" },
-  { value: "3", label: "Teams" },
+  { value: "4", label: "Teams" },
 ];
 
 /** Short list for the scrolling marquees */
@@ -155,6 +156,19 @@ const skillGroups = [
 ];
 
 const experiences = [
+  {
+    title: "Full-Stack Engineer, Product UI",
+    company_name: "Transistor Tech",
+    icon: transistor,
+    iconBg: "#08090a",
+    date: "Oct 2026 to Present",
+    points: [
+      "I build B2B marketing websites in Next.js, from page design through to launch on Vercel or Cloudflare.",
+      "I connect forms to the CRM, set up GA4 and Google Tag Manager, and check that every conversion is actually recorded.",
+      "I fix the technical SEO: indexing, meta tags, sitemaps, schema, redirects, plus llms.txt so AI assistants can read the site too.",
+      "I turn page designs into reusable components and written rules, so the client's team can add pages later without breaking the site.",
+    ],
+  },
   {
     title: "Software Engineer, promoted to Senior Software Engineer",
     company_name: "Solutionsloft",
